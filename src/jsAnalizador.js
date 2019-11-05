@@ -1,8 +1,9 @@
 
 //funcion que se exportara para ser usada en donde se necesite, como parametros el texto a analizar, la posicion de lo ultimo analizado y la posicion de la fila
 function analizador(entrada, a, j) {
+    entrada = entrada.toLowerCase();
     //variables que almacenaran lo que retorne cada funcion segun se opere
-    var preservada, pidentificador, pentero, pflotante, poperador, pagrupacion, psigno, pcadena, pcomentario, pcaracter;
+    var preservada, pidentificador, pentero, pflotante, poperador, pagrupacion, psigno, pcadena, pcomentario, pcaracter,tipo;
     //booleano que avisa a identificador que ya se tomo la cadena como reservada
     var reservadaa;
     //variable que retorna lo analizado
@@ -15,7 +16,8 @@ function analizador(entrada, a, j) {
         preservada = analizadorReservada(entrada, i);
         if (preservada != false) {
             //salidaFinal servira para devolver un arreglo del tipo, lo analizado, posicion en fila y columna
-            salida = salidaFinal('reservada', tokenSalida(preservada), salidaPosicion(preservada), j);
+            if(tokenSalida(preservada)== ('verdadero' || 'falso')) tipo = 'boolean';else tipo = 'reservada';
+            salida = salidaFinal(tipo, tokenSalida(preservada), salidaPosicion(preservada), j);
             i = salidaPosicion(preservada);
             reservadaa = true;
         } else {
