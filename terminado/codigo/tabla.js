@@ -42,4 +42,5 @@ function llenar(entrada) {
 //funcion que borra por completo la tabla
 function borrarTabla() {
     document.getElementById('tableBody').innerHTML = "";
+    borrarMemoria();
 }

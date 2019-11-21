@@ -42,11 +42,11 @@
         <input id="fileInput" type="file" size="50" onchange="processFiles(this.files)">
         <textarea name="textoArea" id="texto" cols="120" rows="15" class="textArea"></textarea>
         <button type="button" class="btn btn-primary btn-lg btn-block" onclick="mostrar();">Analizar</button>
+        <button type="button" class="btn btn-secondary btn-lg btn-block" onclick="borrarTabla()">Reiniciar memoria y tabla</button>
         <li class="list-group-item list-group-item-success" style="text-align: center" id="listado"></li>
         </div>
     </section>
-    <section>
-        <button type="button" class="btn btn-secondary btn-lg btn-block" onclick="borrarTabla()">Borrar tabla</button>
+    <section>        
         <section>
             <table class="table table-bordered table-dark">
                 <thead>
